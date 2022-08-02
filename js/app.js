@@ -4,11 +4,16 @@ const secondColumn = innerColumn[1]
 const currentTime = document.querySelector('.currentTime')
 const dateAndTime = document.querySelector('.dateAndTime')
 const button = document.querySelector("button")
+const currentDate = document.querySelector(".currentDate")
 currentTime.innerHTML = dateFunc()
-dateAndTime.innerHTML = `${new Date().toLocaleString(['en-us'], { month: 'short' })} ${new Date().getDay()} ${dateFunc()}`
+const date = new Date()
+const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+dateAndTime.innerHTML = `${date.toLocaleString(['en-us'], { month: 'short' })} ${date.getDay()} ${dateFunc()}`
+currentDate.innerHTML = `${date.toLocaleString(['en-us'], { month: 'short' })} ${date.getDay()}, ${date.getFullYear()} - ${weekday[date.getDay()]}`
 setInterval(()=>{
+    const date = new Date()
     currentTime.innerHTML = dateFunc()
-    console.log(currentTime.innerHTML)
+    currentDate.innerHTML = `${date.toLocaleString(['en-us'], { month: 'short' })} ${date.getDay()}, ${date.getFullYear()} - ${weekday[date.getDay()]}`
 },10000)
 button.addEventListener("click",()=>document.location.reload())
 const url = 'http://api.openweathermap.org/data/2.5/weather?q=LVIV&units=metric&APPID=5d066958a60d315387d9492393935c19'
