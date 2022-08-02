@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+button{
+    border: none;
+    margin-left: 5px;
+    background-color: transparent;
+    height: 15px;
+}
+.d-flex{
+    display: flex;
+    align-items: center;
+}
+.innerColumn .dateAndTime{
+    margin-bottom: 0;
+}
+
+.innerColumn .d-flex button img{
+    position: static;
+    fill: white;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+.flex-container{
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+    background-color: darkslateblue;
+    display: flex;
+    width: 100%;
+    max-width: 350px;
+    justify-content: space-between;
+    margin: auto;
+}
+.currentTime{
+    font-size: 30px;
+}
+.innerColumn p{
+    margin-bottom: 10px;
+}
+.innerColumn:last-child p{
+    text-align: right;
+}
+.innerColumn:last-child p:nth-child(2){
+    padding-top: 60px;
+}
+.innerColumn:last-child{
+    position: relative;
+}
+.innerColumn:last-child img{
+    position: absolute;
+    right: 0;
+}
